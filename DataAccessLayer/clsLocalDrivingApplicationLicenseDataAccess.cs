@@ -61,7 +61,7 @@ namespace DataAccessLayer
             bool isExist = false;
             SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
 
-            string query = @"Select * from LocalDrivingApplication where LocalDrivingLicenseApplicationId = @LocalDrivingLicenseApplicationId";
+            string query = @"Select * from LocalDrivingLicenseApplication where LocalDrivingLicenseApplicationId = @LocalDrivingLicenseApplicationId";
 
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@ApplicationId", ApplicationId);
