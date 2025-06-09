@@ -1,0 +1,13 @@
+G:\Projects\DVLD\InterFaceLayer\InterFaceLayer\bin\Debug\InterFaceLayer.exe.config
+G:\Projects\DVLD\InterFaceLayer\InterFaceLayer\bin\Debug\InterFaceLayer.exe
+G:\Projects\DVLD\InterFaceLayer\InterFaceLayer\bin\Debug\InterFaceLayer.pdb
+G:\Projects\DVLD\InterFaceLayer\InterFaceLayer\obj\Debug\InterFaceLayer.csproj.AssemblyReference.cache
+G:\Projects\DVLD\InterFaceLayer\InterFaceLayer\obj\Debug\InterFaceLayer.Form1.resources
+G:\Projects\DVLD\InterFaceLayer\InterFaceLayer\obj\Debug\InterFaceLayer.Properties.Resources.resources
+G:\Projects\DVLD\InterFaceLayer\InterFaceLayer\obj\Debug\InterFaceLayer.UserControl1.resources
+G:\Projects\DVLD\InterFaceLayer\InterFaceLayer\obj\Debug\InterFaceLayer.csproj.GenerateResource.cache
+G:\Projects\DVLD\InterFaceLayer\InterFaceLayer\obj\Debug\InterFaceLayer.csproj.CoreCompileInputs.cache
+G:\Projects\DVLD\InterFaceLayer\InterFaceLayer\obj\Debug\InterFaceLayer.exe
+G:\Projects\DVLD\InterFaceLayer\InterFaceLayer\obj\Debug\InterFaceLayer.pdb
+G:\Projects\DVLD\InterFaceLayer\InterFaceLayer\obj\Debug\InterFaceLayer.exe.config
+G:\Projects\DVLD\InterFaceLayer\InterFaceLayer\obj\Debug\InterFaceLayer.ManageApplicationTypesFrm.resources

@@ -1,0 +1,18 @@
+G:\Projects-2025\Course 19\DVLD\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+G:\Projects-2025\Course 19\DVLD\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+G:\Projects-2025\Course 19\DVLD\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.AssemblyReference.cache
+G:\Projects-2025\Course 19\DVLD\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+G:\Projects-2025\Course 19\DVLD\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+G:\Projects-2025\Course 19\DVLD\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+F:\Projects-2025\Course 19\DVLD\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+F:\Projects-2025\Course 19\DVLD\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+F:\Projects-2025\Course 19\DVLD\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.AssemblyReference.cache
+F:\Projects-2025\Course 19\DVLD\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+F:\Projects-2025\Course 19\DVLD\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+F:\Projects-2025\Course 19\DVLD\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+G:\Projects\DVLD\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+G:\Projects\DVLD\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+G:\Projects\DVLD\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.AssemblyReference.cache
+G:\Projects\DVLD\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+G:\Projects\DVLD\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+G:\Projects\DVLD\DataAccessLayer\obj\Debug\DataAccessLayer.pdb

@@ -1,0 +1,38 @@
+G:\Projects-2025\Course 19\DVLD\InterFaceLayer\Test\bin\Debug\Test.exe.config
+G:\Projects-2025\Course 19\DVLD\InterFaceLayer\Test\bin\Debug\Test.exe
+G:\Projects-2025\Course 19\DVLD\InterFaceLayer\Test\bin\Debug\Test.pdb
+G:\Projects-2025\Course 19\DVLD\InterFaceLayer\Test\obj\Debug\Test.csproj.AssemblyReference.cache
+G:\Projects-2025\Course 19\DVLD\InterFaceLayer\Test\obj\Debug\Test.csproj.CoreCompileInputs.cache
+G:\Projects-2025\Course 19\DVLD\InterFaceLayer\Test\obj\Debug\Test.exe
+G:\Projects-2025\Course 19\DVLD\InterFaceLayer\Test\obj\Debug\Test.pdb
+G:\Projects-2025\Course 19\DVLD\InterFaceLayer\Test\bin\Debug\BusinessLayer.dll
+G:\Projects-2025\Course 19\DVLD\InterFaceLayer\Test\bin\Debug\DataAccessLayer.dll
+G:\Projects-2025\Course 19\DVLD\InterFaceLayer\Test\bin\Debug\BusinessLayer.pdb
+G:\Projects-2025\Course 19\DVLD\InterFaceLayer\Test\bin\Debug\DataAccessLayer.pdb
+G:\Projects-2025\Course 19\DVLD\InterFaceLayer\Test\obj\Debug\Test.csproj.Up2Date
+F:\Projects-2025\Course 19\DVLD\InterFaceLayer\Test\bin\Debug\Test.exe.config
+F:\Projects-2025\Course 19\DVLD\InterFaceLayer\Test\bin\Debug\Test.exe
+F:\Projects-2025\Course 19\DVLD\InterFaceLayer\Test\bin\Debug\Test.pdb
+F:\Projects-2025\Course 19\DVLD\InterFaceLayer\Test\bin\Debug\BusinessLayer.dll
+F:\Projects-2025\Course 19\DVLD\InterFaceLayer\Test\bin\Debug\DataAccessLayer.dll
+F:\Projects-2025\Course 19\DVLD\InterFaceLayer\Test\bin\Debug\BusinessLayer.pdb
+F:\Projects-2025\Course 19\DVLD\InterFaceLayer\Test\bin\Debug\DataAccessLayer.pdb
+F:\Projects-2025\Course 19\DVLD\InterFaceLayer\Test\obj\Debug\Test.csproj.AssemblyReference.cache
+F:\Projects-2025\Course 19\DVLD\InterFaceLayer\Test\obj\Debug\Test.exe.config
+F:\Projects-2025\Course 19\DVLD\InterFaceLayer\Test\obj\Debug\Test.csproj.CoreCompileInputs.cache
+F:\Projects-2025\Course 19\DVLD\InterFaceLayer\Test\obj\Debug\Test.csproj.Up2Date
+F:\Projects-2025\Course 19\DVLD\InterFaceLayer\Test\obj\Debug\Test.exe
+F:\Projects-2025\Course 19\DVLD\InterFaceLayer\Test\obj\Debug\Test.pdb
+G:\Projects\DVLD\InterFaceLayer\Test\bin\Debug\Test.exe.config
+G:\Projects\DVLD\InterFaceLayer\Test\bin\Debug\Test.exe
+G:\Projects\DVLD\InterFaceLayer\Test\bin\Debug\Test.pdb
+G:\Projects\DVLD\InterFaceLayer\Test\bin\Debug\BusinessLayer.dll
+G:\Projects\DVLD\InterFaceLayer\Test\bin\Debug\DataAccessLayer.dll
+G:\Projects\DVLD\InterFaceLayer\Test\bin\Debug\BusinessLayer.pdb
+G:\Projects\DVLD\InterFaceLayer\Test\bin\Debug\DataAccessLayer.pdb
+G:\Projects\DVLD\InterFaceLayer\Test\obj\Debug\Test.csproj.AssemblyReference.cache
+G:\Projects\DVLD\InterFaceLayer\Test\obj\Debug\Test.exe.config
+G:\Projects\DVLD\InterFaceLayer\Test\obj\Debug\Test.csproj.CoreCompileInputs.cache
+G:\Projects\DVLD\InterFaceLayer\Test\obj\Debug\Test.csproj.Up2Date
+G:\Projects\DVLD\InterFaceLayer\Test\obj\Debug\Test.exe
+G:\Projects\DVLD\InterFaceLayer\Test\obj\Debug\Test.pdb

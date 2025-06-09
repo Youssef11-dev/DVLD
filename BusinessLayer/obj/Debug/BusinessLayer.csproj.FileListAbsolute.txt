@@ -1,0 +1,27 @@
+G:\Projects-2025\Course 19\DVLD\BusinessLayer\bin\Debug\BusinessLayer.dll
+G:\Projects-2025\Course 19\DVLD\BusinessLayer\bin\Debug\BusinessLayer.pdb
+G:\Projects-2025\Course 19\DVLD\BusinessLayer\bin\Debug\DataAccessLayer.dll
+G:\Projects-2025\Course 19\DVLD\BusinessLayer\bin\Debug\DataAccessLayer.pdb
+G:\Projects-2025\Course 19\DVLD\BusinessLayer\obj\Debug\BusinessLayer.csproj.AssemblyReference.cache
+G:\Projects-2025\Course 19\DVLD\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
+G:\Projects-2025\Course 19\DVLD\BusinessLayer\obj\Debug\Business.EA331CBA.Up2Date
+G:\Projects-2025\Course 19\DVLD\BusinessLayer\obj\Debug\BusinessLayer.dll
+G:\Projects-2025\Course 19\DVLD\BusinessLayer\obj\Debug\BusinessLayer.pdb
+F:\Projects-2025\Course 19\DVLD\BusinessLayer\bin\Debug\BusinessLayer.dll
+F:\Projects-2025\Course 19\DVLD\BusinessLayer\bin\Debug\BusinessLayer.pdb
+F:\Projects-2025\Course 19\DVLD\BusinessLayer\bin\Debug\DataAccessLayer.dll
+F:\Projects-2025\Course 19\DVLD\BusinessLayer\bin\Debug\DataAccessLayer.pdb
+F:\Projects-2025\Course 19\DVLD\BusinessLayer\obj\Debug\BusinessLayer.csproj.AssemblyReference.cache
+F:\Projects-2025\Course 19\DVLD\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
+F:\Projects-2025\Course 19\DVLD\BusinessLayer\obj\Debug\Business.EA331CBA.Up2Date
+F:\Projects-2025\Course 19\DVLD\BusinessLayer\obj\Debug\BusinessLayer.dll
+F:\Projects-2025\Course 19\DVLD\BusinessLayer\obj\Debug\BusinessLayer.pdb
+G:\Projects\DVLD\BusinessLayer\bin\Debug\BusinessLayer.dll
+G:\Projects\DVLD\BusinessLayer\bin\Debug\BusinessLayer.pdb
+G:\Projects\DVLD\BusinessLayer\bin\Debug\DataAccessLayer.dll
+G:\Projects\DVLD\BusinessLayer\bin\Debug\DataAccessLayer.pdb
+G:\Projects\DVLD\BusinessLayer\obj\Debug\BusinessLayer.csproj.AssemblyReference.cache
+G:\Projects\DVLD\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
+G:\Projects\DVLD\BusinessLayer\obj\Debug\Business.EA331CBA.Up2Date
+G:\Projects\DVLD\BusinessLayer\obj\Debug\BusinessLayer.dll
+G:\Projects\DVLD\BusinessLayer\obj\Debug\BusinessLayer.pdb
