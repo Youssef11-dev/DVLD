@@ -10,7 +10,7 @@ namespace DataAccessLayer
     public static class clsApplicationDataAccess
     {
         static public bool FindApplicationById(int ApplicationId,ref byte ApplicationType,ref DateTime ApplicationDate,
-            ref int ApplicantId,ref byte ApplicationStatus,ref double ApplicationFee,ref int CreatedByUser
+            ref int ApplicantId,ref byte ApplicationStatus,ref float ApplicationFee,ref int CreatedByUser
             )
         {
             bool isExist = false;
@@ -32,7 +32,7 @@ namespace DataAccessLayer
                     ApplicationDate = (DateTime)reader["ApplicationDate"];
                     ApplicantId = (int)reader["ApplicantId"];
                     ApplicationStatus = (byte)reader["ApplicationStatus"];
-                    ApplicationFee = (double)reader["PaidFees"];
+                    ApplicationFee = (float)reader["PaidFees"];
                     CreatedByUser = (int)reader["CreatedByUser"];
                     isExist = true;
 

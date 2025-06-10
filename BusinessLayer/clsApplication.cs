@@ -9,28 +9,34 @@ namespace BusinessLayer
 {
     public class clsApplication
     {
-        enum enStatus { New=1,Canceled=2,Completed=3}
+        public enum enStatus { New=1,Canceled=2,Completed=3}
 
-        enum enMode { AddNew,Update};
+        enum enMode { AddNew=1,Update=2};
         
-        enum enApplicationType { CreateNewLicense=1,RenewLicense=2,ReplacementForLost=3, ReplacementForDamaged=4,
+        public enum enApplicationType { CreateNewLicense=1,RenewLicense=2,ReplacementForLost=3, ReplacementForDamaged=4,
             ReleaseDetainedLicense=5,CreateNewInternationalLicense=6,RetakeTest=7
         }
         enMode Mode;
-        public int ApplicationId { get; set; }
-        
-        public byte ApplicationType { get; set; }
 
+
+        public int ApplicationId { get; set; } 
+
+        public enApplicationType ApplicationType;
+
+        public clsApplicationType ApplicationTypeInfo;
         public DateTime ApplicationDate { get; set; }
         public int ApplicantId { get; set; }
 
+        public clsPerson ApplicantInfo;
+
         enStatus ApplicationStatus;
-        public double PaidFee { get; set; }
+        public float PaidFee { get; set; }
         public int CreatedByUser { get; set; }
+        public clsUser CreatedByUserInfo;
 
 
-        private clsApplication(int applicationId, byte ApplicationType,DateTime ApplicationDate,int ApplicantId
-            ,enStatus ApplicationStatus,double PaidFee,int CreatedByUser)
+        private clsApplication(int applicationId, enApplicationType ApplicationType,DateTime ApplicationDate,int ApplicantId
+            ,enStatus ApplicationStatus,float PaidFee,int CreatedByUser)
         {
 
             ApplicationId = applicationId;
@@ -40,6 +46,9 @@ namespace BusinessLayer
             this.ApplicationStatus =ApplicationStatus;
             this.PaidFee = PaidFee;
             this.CreatedByUser = CreatedByUser; 
+            this.CreatedByUserInfo = clsUser.FindUserById(CreatedByUser);
+            this.ApplicantInfo = clsPerson.FindPersonById(ApplicantId);
+            this.ApplicationTypeInfo = clsApplicationType.FindApplicationType(ApplicationType);
             Mode = enMode.Update;
            
 
@@ -61,12 +70,12 @@ namespace BusinessLayer
             int ApplicationId = -1, CreatedByUser = -1, ApplicantId = -1;
             DateTime ApplicationDate = DateTime.MinValue;
             byte ApplicationType = 0, ApplicationStatus = 0;
-            double PaidFee = 0;
+            float PaidFee = 0;
             if (clsApplicationDataAccess.FindApplicationById(applicationId,ref ApplicationType,ref ApplicationDate
                 ,ref ApplicantId
                 ,ref ApplicationStatus,ref PaidFee,ref CreatedByUser))
             {
-                return new clsApplication(ApplicationId,ApplicationType,ApplicationDate,ApplicantId
+                return new clsApplication(ApplicationId,(enApplicationType)ApplicationType,ApplicationDate,ApplicantId
                     , (enStatus)ApplicationStatus,PaidFee,CreatedByUser);
 
             }
@@ -95,6 +104,12 @@ namespace BusinessLayer
             return (this.ApplicationId != -1);
         
         }
+        private bool _UpdateApplication()
+        {
+            return clsApplicationDataAccess.UpdateApplication(ApplicationId,(byte)ApplicationType,ApplicationDate,
+                ApplicantId,(byte)ApplicationStatus,PaidFee,CreatedByUser) ;
+
+        }
         public bool Save()
         {
             switch (Mode)
@@ -109,8 +124,11 @@ namespace BusinessLayer
                     {
                         return false;
                     }
+                case enMode.Update:
+                    return _UpdateApplication();
                     
             }
+
             return false;
 
         }

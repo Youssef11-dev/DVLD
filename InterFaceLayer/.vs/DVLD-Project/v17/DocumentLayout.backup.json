@@ -1,14 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "G:\\Projects\\DVLD\\InterFaceLayer\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{1536EDAE-C380-47AA-BEF1-AC54B081DE25}|..\\DataAccessLayer\\DataAccessLayer.csproj|g:\\projects\\dvld\\dataaccesslayer\\clslocaldrivingapplicationlicensedataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1536EDAE-C380-47AA-BEF1-AC54B081DE25}|..\\DataAccessLayer\\DataAccessLayer.csproj|g:\\projects\\dvld\\dataaccesslayer\\clstesttypedataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -16,37 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "clsLocalDrivingApplicationLicenseDataAccess.cs",
-              "DocumentMoniker": "G:\\Projects\\DVLD\\DataAccessLayer\\clsLocalDrivingApplicationLicenseDataAccess.cs",
-              "RelativeDocumentMoniker": "..\\DataAccessLayer\\clsLocalDrivingApplicationLicenseDataAccess.cs",
-              "ToolTip": "G:\\Projects\\DVLD\\DataAccessLayer\\clsLocalDrivingApplicationLicenseDataAccess.cs",
-              "RelativeToolTip": "..\\DataAccessLayer\\clsLocalDrivingApplicationLicenseDataAccess.cs",
-              "ViewState": "AgIAALsAAAAAAAAAAAAcwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-10T06:00:13.805Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "clsTestTypeDataAccess.cs",
-              "DocumentMoniker": "G:\\Projects\\DVLD\\DataAccessLayer\\clsTestTypeDataAccess.cs",
-              "RelativeDocumentMoniker": "..\\DataAccessLayer\\clsTestTypeDataAccess.cs",
-              "ToolTip": "G:\\Projects\\DVLD\\DataAccessLayer\\clsTestTypeDataAccess.cs",
-              "RelativeToolTip": "..\\DataAccessLayer\\clsTestTypeDataAccess.cs",
-              "ViewState": "AgIAAIAAAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-10T06:00:10.091Z",
-              "EditorCaption": ""
             }
           ]
         }
