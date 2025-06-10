@@ -23,7 +23,7 @@ namespace BusinessLayer
         {
             string applicationTypeName = "";
             double applicationTypeFee = -1.0;
-            if (clsApplicationTypesDataAccess.FindApplicationType(applicationTypeId, ref applicationTypeName, ref applicationTypeFee))
+            if (clsApplicationTypeDataAccess.FindApplicationType(applicationTypeId, ref applicationTypeName, ref applicationTypeFee))
             {
                 return new clsApplicationTypes(applicationTypeId, applicationTypeName, applicationTypeFee);
             }

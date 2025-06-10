@@ -111,8 +111,50 @@ namespace DataAccessLayer
             finally { connection.Close(); }
             return (rowsAffected > 0);
         }
-       
 
+        public static bool UpdateApplication(int ApplicationId,byte ApplicationType,
+            DateTime ApplicationDate, int ApplicantId, byte ApplicationStatus
+            , double PaidFees, int CreatedByUser)
+        {
+            int rowsAffected = 0;
+            SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
+
+            string query = @"Update Applications 
+
+                            set ApplicationType = @ApplicationType,
+                            ApplicationDate = @ApplicationDate,
+                            ApplicantId = @ApplicantId,
+                            ApplicationStatus = @ApplicationStatus,
+                            PaidFees = @PaidFees,
+                            CreatedByUser = @CreatedByUser
+                            where ApplicationId = @ApplicationId";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@ApplicationId", ApplicationId);
+            command.Parameters.AddWithValue("@ApplicationType", ApplicationType);
+            command.Parameters.AddWithValue("@ApplicationDate", ApplicationDate);
+            command.Parameters.AddWithValue("@ApplicantId", ApplicantId);
+            command.Parameters.AddWithValue("@ApplicationStatus", ApplicationStatus);
+            command.Parameters.AddWithValue("@PaidFees", PaidFees);
+            command.Parameters.AddWithValue("@CreatedByUser", CreatedByUser);
+
+            try
+            {
+                connection.Open();
+                rowsAffected = command.ExecuteNonQuery();
+
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return rowsAffected > 0;
+
+        }
 
 
 

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer
 {
-    public static class clsApplicationTypesDataAccess
+    public static class clsApplicationTypeDataAccess
     {
       public  static bool FindApplicationType(int ApplicationTypeId,ref string ApplicationTypeName
             ,ref double ApplicationTypeFee)

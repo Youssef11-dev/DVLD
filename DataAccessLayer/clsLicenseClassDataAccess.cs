@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer
 {
-    public static class clsLicenseClassesDataAccess
+    public static class clsLicenseClassDataAccess
     {
         static public bool FindLicenseClassById(int LicenseClassId, ref string ClassName, ref string ClassDescription
            , ref byte MinimunAllowedAge, ref byte ValidityLength

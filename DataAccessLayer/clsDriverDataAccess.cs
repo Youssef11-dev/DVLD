@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -8,20 +7,18 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer
 {
-    public static class clsLocalDrivingApplicationLicenseDataAccess
+    public static class clsDriverDataAccess
     {
-
-        static public bool FindApplicationByLocalApplicationId(int LocalApplicationId,ref int ApplicationId
-            ,ref byte TestPasses,ref byte LicenseClassId
-           )
+        static public bool FindDriverById(int DriverId,ref int PersonId,ref int CreatedByUserId
+            ,ref DateTime CreatedDay)
         {
             bool isExist = false;
             SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
 
-            string query = @"Select * from LocalDrivingApplications where LocalDrivingLicenseApplicationId = @LocalDrivingLicenseApplicationId";
+            string query = @"Select * from Drivers where DriverId = @DriverId";
 
             SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@LocalDrivingLicenseApplicationId", LocalApplicationId);
+            command.Parameters.AddWithValue("@DriverId", DriverId);
 
             try
             {
@@ -31,9 +28,9 @@ namespace DataAccessLayer
                 if (reader.Read())
                 {
                     isExist = true;
-                    ApplicationId = (int)reader["ApplicationId"];
-                    TestPasses = (byte)reader["TestPasses"];
-                    LicenseClassId = (byte)reader["LicenseClassId"];
+                    PersonId = (int)reader["PersonId"];
+                    CreatedByUserId = (int)reader["CreatedByUserId"];
+                    CreatedDay = (DateTime)reader["CreatedDay"]; 
 
                 }
                 else
@@ -53,18 +50,17 @@ namespace DataAccessLayer
             return isExist;
         }
 
-        
-        static public bool FindLocalApplicationByApplicationId(ref int LocalApplicationId, int ApplicationId
-            , ref byte TestPasses, ref byte LicenseClassId
-           )
+        //Tested
+        static public bool FindDriverByPersinId(ref int DriverId, int PersonId,ref int CreatedByUserId
+            ,ref DateTime CreatedDay)
         {
             bool isExist = false;
             SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
 
-            string query = @"Select * from LocalDrivingLicenseApplications where LocalDrivingLicenseApplicationId = @LocalDrivingLicenseApplicationId";
+            string query = @"Select * from Drivers where PersonId = @PersonId";
 
             SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@ApplicationId", ApplicationId);
+            command.Parameters.AddWithValue("@PersonId", PersonId);
 
             try
             {
@@ -74,9 +70,9 @@ namespace DataAccessLayer
                 if (reader.Read())
                 {
                     isExist = true;
-                    LocalApplicationId = (int)reader["LocalApplicationId"];
-                    TestPasses = (byte)reader["TestPasses"];
-                    LicenseClassId = (byte)reader["LicenseClassId"];
+                    DriverId = (int)reader["DriverId"];
+                    CreatedByUserId = (int)reader["CreatedByUserId"];
+                    CreatedDay = (DateTime)reader["CreatedDay"];
 
                 }
                 else
@@ -96,22 +92,22 @@ namespace DataAccessLayer
             return isExist;
         }
 
-
-       
-        public static int AddNewLocalApplication(int ApplicationId,byte TestPasses,byte LicenseClassId)
+        //Tested
+        public static int AddNewDriver( int PersonId,  int CreatedByUserId
+            ,  DateTime CreatedDay)
         {
-            int LocalApplicationId = -1;
+            int DriverId = -1;
             SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
 
-            string query = @"Insert Into LocalDrivingApplication (ApplicationId,TestPasses,LicenseClassId)
-                            values (@ApplicationId,@TestPasses,@LicenseClassId)
+            string query = @"Insert Into Drivers (PersonId,CreatedByUserId,CreatedDay)
+                            values (@PersonId,@CreatedByUserId,@CreatedDay)
                             Select Scope_Identity();";
             SqlCommand command = new SqlCommand(query, connection);
 
-            command.Parameters.AddWithValue("@ApplicationId", ApplicationId);
-            command.Parameters.AddWithValue("@TestPasses", TestPasses);
-            command.Parameters.AddWithValue("@LicenseClassId", LicenseClassId);
-            
+            command.Parameters.AddWithValue("@PersonId", PersonId);
+            command.Parameters.AddWithValue("@CreatedByUserId", CreatedByUserId);
+            command.Parameters.AddWithValue("@CreatedDay", CreatedDay);
+        
 
 
 
@@ -121,13 +117,13 @@ namespace DataAccessLayer
                 object result = command.ExecuteScalar();
                 if (result != null && int.TryParse(result.ToString(), out int insertedId))
                 {
-                    LocalApplicationId = insertedId;
+                    DriverId = insertedId;
                 }
 
             }
             catch (Exception ex)
             {
-                return -1;
+
 
             }
             finally
@@ -135,19 +131,19 @@ namespace DataAccessLayer
 
                 connection.Close();
             }
-            return LocalApplicationId;
+            return PersonId;
 
         }
 
 
-        
-        public static bool DeleteLocalDrivingApplication(int LocalApplicationId)
+        //Tested
+        public static bool DeleteDriver(int DriverId)
         {
             int rowsAffected = 0;
             SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
-            string query = "Delete LocalDrivingApplication Where LocalDrivingLicenseApplicationId = @LocalDrivingLicenseApplicationId";
+            string query = "Delete Drivers Where DriverId = @DriverId";
             SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@LocalDrivingLicenseApplicationId", LocalApplicationId);
+            command.Parameters.AddWithValue("@DriverId", DriverId);
 
             try
             {
@@ -161,24 +157,26 @@ namespace DataAccessLayer
             return (rowsAffected > 0);
         }
 
-        public static bool UpdateLocalApplication(int LocalApplicationId,int ApplicationId, byte TestPasses, byte LicenseClassId)
+
+        //Tested
+        public static bool UpdatePerson(int DriverId,int PersonId, int CreatedByUserId
+            , DateTime CreatedDay)
         {
             int rowsAffected = 0;
             SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
 
-            string query = @"Update LocalDrivingLicenseApplications 
+            string query = @"Update Drivers 
 
-                            set ApplicationId = @ApplicationId,
-                            TestPasses = @TestPasses,
-                            LicenseClassId = @LicenseClassId
-                            where LocalApplicationId = @LocalApplicationId";
+                            set PersonId = @PersonId,
+                            CreatedByUserId = @CreatedByUserId,
+                            CreatedDay = @CreatedDay
+                            where DriverId = @DriverId";
             SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@LocalApplicationId", LocalApplicationId);
-            command.Parameters.AddWithValue("@ApplicationId", ApplicationId);
-            command.Parameters.AddWithValue("@TestPasses", TestPasses);
-            command.Parameters.AddWithValue("@LicenseClassId", LicenseClassId);
-
-
+            command.Parameters.AddWithValue("@PersonId", PersonId);
+            command.Parameters.AddWithValue("@DriverId", DriverId);
+            command.Parameters.AddWithValue("@CreatedByUserId", CreatedByUserId);
+            command.Parameters.AddWithValue("@CreatedDay", CreatedDay);
+         
             try
             {
                 connection.Open();
@@ -199,12 +197,5 @@ namespace DataAccessLayer
         }
 
 
-
-
-
-
-
-
     }
-
 }

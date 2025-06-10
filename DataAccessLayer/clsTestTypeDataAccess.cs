@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer
 {
-    public static class clsTestTypesDataAccess
+    public static class clsTestTypeDataAccess
     {
         static public bool FindTestTypeById(byte TestTypeId,ref string TestTypeTitle,ref float TestTypeFee,ref string TestTypeDescription
         )
