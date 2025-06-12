@@ -9,7 +9,7 @@ namespace DataAccessLayer
 {
     public static  class clsTestDataAccess
     {
-        static public bool FindTestById(int TestId,ref byte TestTypeId,ref int ApplicationId,ref bool TestResult,
+        static public bool FindTestById(int TestId,ref byte TestTypeId,ref int ApplicationId,ref bool TestResult,ref bool TestTaked,
             ref decimal PaidFees,ref string Notes,ref DateTime TestDate,ref int CreatedByUser,
             ref bool IsLocked
        )
@@ -32,6 +32,7 @@ namespace DataAccessLayer
                     isExist = true;
                     TestTypeId = (byte)reader["TestTypeId"];
                     ApplicationId = (int)reader["ApplicationId"];
+                    TestTaked = (bool)reader["TestTaked"];
                     TestResult = (bool)reader["TestResult"];
                     PaidFees = (decimal)reader["PaidFees"];
                     TestDate = (DateTime)reader["TestDate"];
@@ -63,21 +64,22 @@ namespace DataAccessLayer
 
 
         //Tested
-        public static int AddNewTest(  byte TestTypeId,  int ApplicationId,  bool TestResult,
+        public static int AddNewTest(  byte TestTypeId,  int ApplicationId,  bool TestResult,bool TestTaked,
              decimal PaidFees,  string Notes,  DateTime TestDate,  int CreatedByUser,
              bool IsLocked)
         {
             int TestId = -1;
             SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
 
-            string query = @"Insert Into Tests (TestTypeId,ApplicationId,TestResult,PaidFees,Notes,TestDate,CreatedByUser,IsLocked)
-                            values (@TestTypeId,@ApplicationId,@TestResult,@PaidFees,@Notes,@TestDate,@CreatedByUser,@IsLocked)
+            string query = @"Insert Into Tests (TestTypeId,ApplicationId,TestResult,TestTaked,PaidFees,Notes,TestDate,CreatedByUser,IsLocked)
+                            values (@TestTypeId,@ApplicationId,@TestResult,@TestTaked,@PaidFees,@Notes,@TestDate,@CreatedByUser,@IsLocked)
                             Select Scope_Identity();";
             SqlCommand command = new SqlCommand(query, connection);
 
             command.Parameters.AddWithValue("@TestTypeId", TestTypeId);
             command.Parameters.AddWithValue("@ApplicationId", ApplicationId);
             command.Parameters.AddWithValue("@TestResult", TestResult);
+            command.Parameters.AddWithValue("@TestTaked", TestTaked);
             command.Parameters.AddWithValue("@PaidFees", PaidFees);
             command.Parameters.AddWithValue("@TestDate", TestDate);
             command.Parameters.AddWithValue("@CreatedByUser", CreatedByUser);
@@ -144,7 +146,7 @@ namespace DataAccessLayer
 
 
         //Tested
-        public static bool UpdateTest(int TestId,byte TestTypeId, int ApplicationId, bool TestResult,
+        public static bool UpdateTest(int TestId,byte TestTypeId, int ApplicationId, bool TestResult,bool TestTaked,
              decimal PaidFees, string Notes, DateTime TestDate, int CreatedByUser,
              bool IsLocked)
         {
@@ -156,6 +158,7 @@ namespace DataAccessLayer
                             set TestTypeId = @TestTypeId,
                             ApplicationId = @ApplicationId,
                             TestResult = @TestResult,
+                            TestTaked = @TestTaked,
                             PaidFees = @PaidFees,
                             TestDate = @TestDate,
                             CreatedByUser = @CreatedByUser,
@@ -165,6 +168,7 @@ namespace DataAccessLayer
             command.Parameters.AddWithValue("@TestTypeId", TestTypeId);
             command.Parameters.AddWithValue("@ApplicationId", ApplicationId);
             command.Parameters.AddWithValue("@TestResult", TestResult);
+            command.Parameters.AddWithValue("@TestTaked", TestTaked);
             command.Parameters.AddWithValue("@PaidFees", PaidFees);
             command.Parameters.AddWithValue("@TestDate", TestDate);
             command.Parameters.AddWithValue("@CreatedByUser", CreatedByUser);
