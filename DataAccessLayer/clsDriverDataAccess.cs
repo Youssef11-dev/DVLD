@@ -30,7 +30,7 @@ namespace DataAccessLayer
                     isExist = true;
                     PersonId = (int)reader["PersonId"];
                     CreatedByUserId = (int)reader["CreatedByUserId"];
-                    CreatedDay = (DateTime)reader["CreatedDay"]; 
+                    CreatedDay = (DateTime)reader["CreatedDate"]; 
 
                 }
                 else
@@ -51,7 +51,7 @@ namespace DataAccessLayer
         }
 
         //Tested
-        static public bool FindDriverByPersinId(ref int DriverId, int PersonId,ref int CreatedByUserId
+        static public bool FindDriverByPersonId(ref int DriverId, int PersonId,ref int CreatedByUserId
             ,ref DateTime CreatedDay)
         {
             bool isExist = false;
@@ -99,14 +99,14 @@ namespace DataAccessLayer
             int DriverId = -1;
             SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
 
-            string query = @"Insert Into Drivers (PersonId,CreatedByUserId,CreatedDay)
-                            values (@PersonId,@CreatedByUserId,@CreatedDay)
+            string query = @"Insert Into Drivers (PersonId,CreatedByUserId,CreatedDate)
+                            values (@PersonId,@CreatedByUserId,@CreatedDate)
                             Select Scope_Identity();";
             SqlCommand command = new SqlCommand(query, connection);
 
             command.Parameters.AddWithValue("@PersonId", PersonId);
             command.Parameters.AddWithValue("@CreatedByUserId", CreatedByUserId);
-            command.Parameters.AddWithValue("@CreatedDay", CreatedDay);
+            command.Parameters.AddWithValue("@CreatedDate", CreatedDay);
         
 
 
@@ -131,7 +131,7 @@ namespace DataAccessLayer
 
                 connection.Close();
             }
-            return PersonId;
+            return DriverId;
 
         }
 
@@ -160,7 +160,7 @@ namespace DataAccessLayer
 
         //Tested
         public static bool UpdatePerson(int DriverId,int PersonId, int CreatedByUserId
-            , DateTime CreatedDay)
+            , DateTime CreatedDate)
         {
             int rowsAffected = 0;
             SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
@@ -169,13 +169,13 @@ namespace DataAccessLayer
 
                             set PersonId = @PersonId,
                             CreatedByUserId = @CreatedByUserId,
-                            CreatedDay = @CreatedDay
+                            CreatedDate = @CreatedDate
                             where DriverId = @DriverId";
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@PersonId", PersonId);
             command.Parameters.AddWithValue("@DriverId", DriverId);
             command.Parameters.AddWithValue("@CreatedByUserId", CreatedByUserId);
-            command.Parameters.AddWithValue("@CreatedDay", CreatedDay);
+            command.Parameters.AddWithValue("@CreatedDate", CreatedDate);
          
             try
             {

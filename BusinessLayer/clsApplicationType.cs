@@ -9,17 +9,17 @@ namespace BusinessLayer
 {
     public class clsApplicationType
     {
-        public int ApplicationTypeId { get;  }
+        public byte ApplicationTypeId { get;  }
         public string ApplicationTypeName { get; }
         public double ApplicationTypeFee { get;  }
 
-        private clsApplicationType(int applicationTypeId,string applicationTypeName,double applicationTypeFee) 
+        private clsApplicationType(byte applicationTypeId,string applicationTypeName,double applicationTypeFee) 
         {
             this.ApplicationTypeId = applicationTypeId;
             this.ApplicationTypeName = applicationTypeName;
             this.ApplicationTypeFee = applicationTypeFee;
         }
-        public static clsApplicationType FindApplicationType(int applicationTypeId)
+        public static clsApplicationType FindApplicationType(byte applicationTypeId)
         {
             string applicationTypeName = "";
             double applicationTypeFee = -1.0;
@@ -33,6 +33,7 @@ namespace BusinessLayer
             }
 
         }
+      
 
 
     }

@@ -30,13 +30,13 @@ namespace BusinessLayer
         public clsPerson ApplicantInfo;
 
         enStatus ApplicationStatus;
-        public float PaidFee { get; set; }
+        public double PaidFee { get; set; }
         public int CreatedByUser { get; set; }
         public clsUser CreatedByUserInfo;
 
 
         private clsApplication(int applicationId, enApplicationType ApplicationType,DateTime ApplicationDate,int ApplicantId
-            ,enStatus ApplicationStatus,float PaidFee,int CreatedByUser)
+            ,enStatus ApplicationStatus,double PaidFee,int CreatedByUser)
         {
 
             ApplicationId = applicationId;
@@ -48,7 +48,7 @@ namespace BusinessLayer
             this.CreatedByUser = CreatedByUser; 
             this.CreatedByUserInfo = clsUser.FindUserById(CreatedByUser);
             this.ApplicantInfo = clsPerson.FindPersonById(ApplicantId);
-            this.ApplicationTypeInfo = clsApplicationType.FindApplicationType(ApplicationType);
+            this.ApplicationTypeInfo = clsApplicationType.FindApplicationType((byte)ApplicationType);
             Mode = enMode.Update;
            
 
@@ -67,15 +67,15 @@ namespace BusinessLayer
 
         public static clsApplication FindApplicationById(int applicationId)
         {
-            int ApplicationId = -1, CreatedByUser = -1, ApplicantId = -1;
+            int CreatedByUser = -1, ApplicantId = -1;
             DateTime ApplicationDate = DateTime.MinValue;
             byte ApplicationType = 0, ApplicationStatus = 0;
-            float PaidFee = 0;
+            double PaidFee = 0;
             if (clsApplicationDataAccess.FindApplicationById(applicationId,ref ApplicationType,ref ApplicationDate
                 ,ref ApplicantId
                 ,ref ApplicationStatus,ref PaidFee,ref CreatedByUser))
             {
-                return new clsApplication(ApplicationId,(enApplicationType)ApplicationType,ApplicationDate,ApplicantId
+                return new clsApplication(applicationId,(enApplicationType)ApplicationType,ApplicationDate,ApplicantId
                     , (enStatus)ApplicationStatus,PaidFee,CreatedByUser);
 
             }
@@ -88,14 +88,9 @@ namespace BusinessLayer
 
         public static bool DeleteApplication(int applicationId)
         {
-            if ((int)(clsApplication.FindApplicationById(applicationId).ApplicationStatus) == 1)
-            {
+           
              return  clsApplicationDataAccess.DeleteApplication(applicationId);
-            }
-            else
-            {
-                return false;
-            }
+        
         }
         private bool _AddNewApplication() 
         {

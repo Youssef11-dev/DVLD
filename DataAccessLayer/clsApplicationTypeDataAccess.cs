@@ -9,7 +9,7 @@ namespace DataAccessLayer
 {
     public static class clsApplicationTypeDataAccess
     {
-      public  static bool FindApplicationType(int ApplicationTypeId,ref string ApplicationTypeName
+      public  static bool FindApplicationType(byte ApplicationTypeId,ref string ApplicationTypeName
             ,ref double ApplicationTypeFee)
         {
             bool isExist = false;
