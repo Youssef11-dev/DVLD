@@ -11,12 +11,12 @@ namespace BusinessLayer
     {
         public enum enStatus { New=1,Canceled=2,Completed=3}
 
-        enum enMode { AddNew=1,Update=2};
+        protected enum enMode { AddNew=1,Update=2};
         
         public enum enApplicationType { CreateNewLicense=1,RenewLicense=2,ReplacementForLost=3, ReplacementForDamaged=4,
             ReleaseDetainedLicense=5,CreateNewInternationalLicense=6,RetakeTest=7
         }
-        enMode Mode;
+       protected enMode Mode;
 
 
         public int ApplicationId { get; set; } 
@@ -29,8 +29,8 @@ namespace BusinessLayer
 
         public clsPerson ApplicantInfo;
 
-        enStatus ApplicationStatus;
-        public double PaidFee { get; set; }
+        public enStatus ApplicationStatus;
+        public double PaidFees { get; set; }
         public int CreatedByUser { get; set; }
         public clsUser CreatedByUserInfo;
 
@@ -44,7 +44,7 @@ namespace BusinessLayer
             this.ApplicationDate = ApplicationDate;
             this.ApplicantId = ApplicantId;
             this.ApplicationStatus =ApplicationStatus;
-            this.PaidFee = PaidFee;
+            this.PaidFees = PaidFee;
             this.CreatedByUser = CreatedByUser; 
             this.CreatedByUserInfo = clsUser.FindUserById(CreatedByUser);
             this.ApplicantInfo = clsPerson.FindPersonById(ApplicantId);
@@ -58,7 +58,7 @@ namespace BusinessLayer
             this.ApplicationId = -1;
             this.ApplicationType = 0;
             this.ApplicantId= -1;
-            this.PaidFee= 0;
+            this.PaidFees= 0;
             this.CreatedByUser = -1;
             this.ApplicationStatus = enStatus.New;
             this.ApplicationDate = DateTime.MinValue;
@@ -95,14 +95,14 @@ namespace BusinessLayer
         private bool _AddNewApplication() 
         {
             this.ApplicationId= clsApplicationDataAccess.AddNewApplication((byte)this.ApplicationType, this.ApplicationDate, this.ApplicantId
-                , (byte)this.ApplicationStatus, this.PaidFee, this.CreatedByUser) ;
+                , (byte)this.ApplicationStatus, this.PaidFees, this.CreatedByUser) ;
             return (this.ApplicationId != -1);
         
         }
         private bool _UpdateApplication()
         {
             return clsApplicationDataAccess.UpdateApplication(ApplicationId,(byte)ApplicationType,ApplicationDate,
-                ApplicantId,(byte)ApplicationStatus,PaidFee,CreatedByUser) ;
+                ApplicantId,(byte)ApplicationStatus,PaidFees,CreatedByUser) ;
 
         }
         public bool Save()

@@ -18,7 +18,7 @@ namespace DataAccessLayer
             bool isExist = false;
             SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
 
-            string query = @"Select * from LocalDrivingApplications where LocalDrivingLicenseApplicationId = @LocalDrivingLicenseApplicationId";
+            string query = @"Select * from LocalDrivingLicenseApplications where LocalDrivingLicenseApplicationId = @LocalDrivingLicenseApplicationId";
 
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@LocalDrivingLicenseApplicationId", LocalApplicationId);
@@ -103,7 +103,7 @@ namespace DataAccessLayer
             int LocalApplicationId = -1;
             SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
 
-            string query = @"Insert Into LocalDrivingApplication (ApplicationId,TestPasses,LicenseClassId)
+            string query = @"Insert Into LocalDrivingLicenseApplications (ApplicationId,TestPasses,LicenseClassId)
                             values (@ApplicationId,@TestPasses,@LicenseClassId)
                             Select Scope_Identity();";
             SqlCommand command = new SqlCommand(query, connection);
@@ -171,9 +171,9 @@ namespace DataAccessLayer
                             set ApplicationId = @ApplicationId,
                             TestPasses = @TestPasses,
                             LicenseClassId = @LicenseClassId
-                            where LocalApplicationId = @LocalApplicationId";
+                            where LocalDrivingLicenseApplicationId = @LocalDrivingLicenseApplicationId";
             SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@LocalApplicationId", LocalApplicationId);
+            command.Parameters.AddWithValue("@LocalDrivingLicenseApplicationId", LocalApplicationId);
             command.Parameters.AddWithValue("@ApplicationId", ApplicationId);
             command.Parameters.AddWithValue("@TestPasses", TestPasses);
             command.Parameters.AddWithValue("@LicenseClassId", LicenseClassId);

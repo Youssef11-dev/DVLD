@@ -10,14 +10,14 @@ namespace DataAccessLayer
     public static class clsLicenseClassDataAccess
     {
         static public bool FindLicenseClassById(int LicenseClassId, ref string ClassName, ref string ClassDescription
-           , ref byte MinimunAllowedAge, ref byte ValidityLength
-           , ref float ClassFee
+           , ref byte MinimumAllowedAge, ref byte ValidityLength
+           , ref double ClassFees
            )
         {
             bool isExist = false;
             SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
 
-            string query = @"Select * from People where LicenseClassId = @LicenseClassId";
+            string query = @"Select * from LicenseClasses where LicenseClassId = @LicenseClassId";
 
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@LicenseClassId", LicenseClassId);
@@ -32,9 +32,9 @@ namespace DataAccessLayer
                     isExist = true;
                     ClassName = (string)reader["ClassName"];
                     ClassDescription = (string)reader["ClassDescription"];
-                    MinimunAllowedAge = (byte)reader["MinimunAllowedAge"];
+                    MinimumAllowedAge = (byte)reader["MinimumAllowedAge"];
                     ValidityLength = (byte)reader["ValidityLength"];
-                    ClassFee = (float)reader["ClassFee"];
+                    ClassFees = (double)reader["ClassFees"];
 
                 }
                 else
@@ -55,15 +55,15 @@ namespace DataAccessLayer
         }
 
     
-        static public bool FindLicenseClassByClassName(ref int LicenseClassId, string ClassName, ref string ClassDescription
-           , ref byte MinimunAllowedAge, ref byte ValidityLength
-           , ref float ClassFee
+        static public bool FindLicenseClassByClassName(ref byte LicenseClassId, string ClassName, ref string ClassDescription
+           , ref byte MinimumAllowedAge, ref byte ValidityLength
+           , ref double ClassFees
            )
         {
             bool isExist = false;
             SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
 
-            string query = @"Select * from People where ClassName = @LicenseCClassNamelassId";
+            string query = @"Select * from LicenseClasses where ClassName = @ClassName";
 
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@ClassName", ClassName);
@@ -76,11 +76,11 @@ namespace DataAccessLayer
                 if (reader.Read())
                 {
                     isExist = true;
-                    LicenseClassId = (int)reader["LicenseClassId"];
+                    LicenseClassId = (byte)reader["LicenseClassId"];
                     ClassDescription = (string)reader["ClassDescription"];
-                    MinimunAllowedAge = (byte)reader["MinimunAllowedAge"];
+                    MinimumAllowedAge = (byte)reader["MinimumAllowedAge"];
                     ValidityLength = (byte)reader["ValidityLength"];
-                    ClassFee = (float)reader["ClassFee"];
+                    ClassFees = (double)reader["ClassFees"];
 
                 }
                 else
@@ -105,8 +105,8 @@ namespace DataAccessLayer
 
 
         public static bool UpdateLicenseClass( int LicenseClassId, string ClassName,  string ClassDescription
-           ,  byte MinimunAllowedAge,  byte ValidityLength
-           ,  float ClassFee)
+           ,  byte MinimumAllowedAge,  byte ValidityLength
+           ,  double ClassFees)
         {
             int rowsAffected = 0;
             SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
@@ -115,17 +115,17 @@ namespace DataAccessLayer
 
                             set ClassName = @ClassName,
                             ClassDescription = @ClassDescription,
-                            MinimunAllowedAge = @MinimunAllowedAge,
+                            MinimumAllowedAge = @MinimumAllowedAge,
                             ValidityLength = @ValidityLength,
-                            ClassFee = @ClassFee
+                            ClassFees = @ClassFees
                             where LicenseClassId = @LicenseClassId";
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@LicenseClassId", LicenseClassId);
             command.Parameters.AddWithValue("@ClassName", ClassName);
             command.Parameters.AddWithValue("@ClassDescription", ClassDescription);
-            command.Parameters.AddWithValue("@MinimunAllowedAge", MinimunAllowedAge);
+            command.Parameters.AddWithValue("@MinimumAllowedAge", MinimumAllowedAge);
             command.Parameters.AddWithValue("@ValidityLength", ValidityLength);
-            command.Parameters.AddWithValue("@ClassFee", ClassFee);
+            command.Parameters.AddWithValue("@ClassFees", ClassFees);
            
             try
             {
