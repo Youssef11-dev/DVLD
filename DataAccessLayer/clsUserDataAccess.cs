@@ -213,12 +213,12 @@ namespace DataAccessLayer
             int rowsAffected = 0;
             SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
 
-            string query = @"Update People 
+            string query = @"Update Users 
 
                             set PersonId = @PersonId,
                             UserName = @UserName,
                             Password = @Password,
-                            IsActive = @IsActive,   
+                            IsActive = @IsActive   
                             where UserId = @UserId";
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@UserId", UserId);

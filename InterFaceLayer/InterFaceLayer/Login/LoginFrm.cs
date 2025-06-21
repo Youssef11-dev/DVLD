@@ -32,12 +32,20 @@ namespace InterFaceLayer.Login
                 }
                 else
                 {
-                    clsGlobal.CurrentUserName = User.UserName;
-                    clsGlobal.CurrentPassword = User.Password;
+                    bool SignOut = false;
+                    clsGlobal.CurrentUser = User;
                     MainFrm mainFrm = new MainFrm();
                     this.Hide();
                     mainFrm.ShowDialog();
-                    this.Close();
+                    if (mainFrm.IsSignedOut)
+                    {
+                        this.Show();
+                    }
+                    else
+                    {
+                        this.Close();
+                    }
+                    
                 }
 
 

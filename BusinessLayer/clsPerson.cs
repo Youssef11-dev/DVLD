@@ -50,6 +50,7 @@ namespace BusinessLayer
             Address = string.Empty;
             Mode = enMode.AddNew;
         }
+        public clsCountry CountryInfo;
         private clsPerson(int  id,string FirstName,string SecondName,string ThirdName,string FourthName,
             string NationalNumber,char Gender,DateTime DateOfBirth,int CountryId,string Phone,
             string Email,string ImagePath,string Address)
@@ -67,6 +68,7 @@ namespace BusinessLayer
             this.Email = Email;
             this.ImagePath = ImagePath;
             this.Address = Address;
+            CountryInfo = clsCountry.FindCountry(CountryId);
             this.Mode = enMode.Update;
         }
         public static clsPerson FindPersonById(int id) 

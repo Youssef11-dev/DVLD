@@ -15,3 +15,8 @@ G:\Projects\DVLD\InterFaceLayer\InterFaceLayer\bin\Debug\DataAccessLayer.dll
 G:\Projects\DVLD\InterFaceLayer\InterFaceLayer\bin\Debug\BusinessLayer.pdb
 G:\Projects\DVLD\InterFaceLayer\InterFaceLayer\bin\Debug\DataAccessLayer.pdb
 G:\Projects\DVLD\InterFaceLayer\InterFaceLayer\obj\Debug\InterFac.4799A3C6.Up2Date
+G:\Projects\DVLD\InterFaceLayer\InterFaceLayer\obj\Debug\InterFaceLayer.Account_Setting.CurrentUserInfofrm.resources
+G:\Projects\DVLD\InterFaceLayer\InterFaceLayer\obj\Debug\InterFaceLayer.Controls.CtrlShowPersonInfo.resources
+G:\Projects\DVLD\InterFaceLayer\InterFaceLayer\obj\Debug\InterFaceLayer.Controls.CtrlShowUserInfo.resources
+G:\Projects\DVLD\InterFaceLayer\InterFaceLayer\obj\Debug\InterFaceLayer.Account_Setting.ChangePasswordFrm.resources
+G:\Projects\DVLD\InterFaceLayer\InterFaceLayer\obj\Debug\InterFaceLayer.Controls.CtrlChangePassword.resources

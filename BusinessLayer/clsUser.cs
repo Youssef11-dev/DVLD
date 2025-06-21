@@ -16,6 +16,7 @@ namespace BusinessLayer
         public string UserName { get; set; }
         public string Password { get; set; }
         public bool IsActive { get; set; }
+        public clsPerson PersonInfo;
 
         private clsUser(int userId,int personId,string userName,string password,bool isActive)
         {
@@ -24,6 +25,7 @@ namespace BusinessLayer
             this.UserName = userName;
             this.Password = password;
             this.IsActive = isActive;
+            this.PersonInfo = clsPerson.FindPersonById(PersonId);
             Mode = enMode.Update;
         }
         public clsUser()

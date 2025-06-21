@@ -46,6 +46,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account Setting\ChangePasswordFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Account Setting\ChangePasswordFrm.Designer.cs">
+      <DependentUpon>ChangePasswordFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Account Setting\CurrentUserInfofrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Account Setting\CurrentUserInfofrm.Designer.cs">
+      <DependentUpon>CurrentUserInfofrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtrlChangePassword.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CtrlChangePassword.Designer.cs">
+      <DependentUpon>CtrlChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtrlShowPersonInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CtrlShowPersonInfo.Designer.cs">
+      <DependentUpon>CtrlShowPersonInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CtrlShowUserInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CtrlShowUserInfo.Designer.cs">
+      <DependentUpon>CtrlShowUserInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login\LoginFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +91,21 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\clsGlobal.cs" />
+    <EmbeddedResource Include="Account Setting\ChangePasswordFrm.resx">
+      <DependentUpon>ChangePasswordFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Account Setting\CurrentUserInfofrm.resx">
+      <DependentUpon>CurrentUserInfofrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CtrlChangePassword.resx">
+      <DependentUpon>CtrlChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CtrlShowPersonInfo.resx">
+      <DependentUpon>CtrlShowPersonInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CtrlShowUserInfo.resx">
+      <DependentUpon>CtrlShowUserInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login\LoginFrm.resx">
       <DependentUpon>LoginFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -435,9 +480,7 @@
   <ItemGroup>
     <None Include="Resources\Written Test 512.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Account Setting\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\e2599f47-521d-41f3-9e75-ff9e5add96da.png" />
   </ItemGroup>
