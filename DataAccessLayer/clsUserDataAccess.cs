@@ -98,6 +98,49 @@ namespace DataAccessLayer
             }
             return isExist;
         }
+        static public bool FindUserByUserNameAndPassword(ref int UserId, ref int PersonId, string UserName, string Password
+              , ref bool IsActive
+              )
+        {
+            bool isExist = false;
+            SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
+
+            string query = @"SELECT * FROM Users 
+                        WHERE UserName = @UserName AND Password = @Password;";
+
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@UserName", UserName);
+            command.Parameters.AddWithValue("@Password", Password);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    isExist = true;
+                    UserId = (int)reader["UserId"];
+                    PersonId = (int)reader["PersonId"];
+                    IsActive = (bool)reader["IsActive"];
+
+                }
+                else
+                {
+                    isExist = false;
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                isExist = false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return isExist;
+        }
 
 
 

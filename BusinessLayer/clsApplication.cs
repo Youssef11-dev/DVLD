@@ -86,7 +86,7 @@ namespace BusinessLayer
 
         }
 
-        public static bool DeleteApplication(int applicationId)
+        public static  bool DeleteApplication(int applicationId)
         {
            
              return  clsApplicationDataAccess.DeleteApplication(applicationId);

@@ -53,6 +53,21 @@ namespace BusinessLayer
             }
         
         }
+        public static clsUser FindUserByUserNameAndPassword(string UserName,string Password)
+        {
+            int UserId = -1;
+            int PersonId = -1;
+            bool IsActive = false;
+            if (clsUserDataAccess.FindUserByUserNameAndPassword(ref UserId, ref PersonId,  UserName,  Password, ref IsActive))
+            {
+                return new clsUser(UserId, PersonId, UserName, Password, IsActive);
+            }
+            else
+            {
+                return null;
+            }
+
+        }
         private bool _AddNewUser()
         {
             this.UserId = clsUserDataAccess.AddNewUser(PersonId,UserName,Password,IsActive);

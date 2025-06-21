@@ -443,6 +443,16 @@ namespace InterFaceLayer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap e2599f47_521d_41f3_9e75_ff9e5add96da {
+            get {
+                object obj = ResourceManager.GetObject("e2599f47-521d-41f3-9e75-ff9e5add96da", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap edit_32 {
             get {
                 object obj = ResourceManager.GetObject("edit 32", resourceCulture);
