@@ -158,6 +158,18 @@ namespace BusinessLayer
         {
             return clsPersonDataAccess.isPersonExist(NationalNumber);
         }
+        public static bool IsPersonWithIdHasNationalId(string NationalNumber ,int PersonId)
+        {
+            if(clsPersonDataAccess.isPersonExist(PersonId) && clsPersonDataAccess.isPersonExist(NationalNumber))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        
 
     }
 }

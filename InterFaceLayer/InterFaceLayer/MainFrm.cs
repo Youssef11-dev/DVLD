@@ -45,6 +45,11 @@ namespace InterFaceLayer
             this.Close();
            
         }
-      
+
+        private void peopleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PeopleFrm peopleFrm = new PeopleFrm();
+            peopleFrm.ShowDialog();
+        }
     }
 }

@@ -19,12 +19,12 @@ namespace InterFaceLayer.Controls
             InitializeComponent();   
             
         }
-        public void CtrlLoad(clsPerson Person)
+        public bool CtrlLoad(clsPerson Person)
         {
             _Person = Person;
-            FillData();
+            return FillData();
         }
-        private void FillData()
+        private bool FillData()
         {
             if (_Person != null)
             {
@@ -39,10 +39,12 @@ namespace InterFaceLayer.Controls
                 Phonelbl.Text = _Person.Phone.ToString();
                 Countrylbl.Text = _Person.CountryInfo.CountryName.ToString();
                 NationalNolbl.Text = _Person.NationalNumber.ToString();
+                return true;
             }
             else
             {
                 MessageBox.Show("Person Not Found");
+                return false;
                 
             }
 

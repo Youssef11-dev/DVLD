@@ -301,7 +301,7 @@ namespace DataAccessLayer
             People.Phone, People.Email,                      People.ImagePath, People.Address FROM    
             People INNER JOIN                     Countries ON People.CountryId = Countries.CountryID";
             SqlCommand command = new SqlCommand(query, connection);
-
+          
             try
             {
                 connection.Open();

@@ -20,3 +20,10 @@ G:\Projects\DVLD\InterFaceLayer\InterFaceLayer\obj\Debug\InterFaceLayer.Controls
 G:\Projects\DVLD\InterFaceLayer\InterFaceLayer\obj\Debug\InterFaceLayer.Controls.CtrlShowUserInfo.resources
 G:\Projects\DVLD\InterFaceLayer\InterFaceLayer\obj\Debug\InterFaceLayer.Account_Setting.ChangePasswordFrm.resources
 G:\Projects\DVLD\InterFaceLayer\InterFaceLayer\obj\Debug\InterFaceLayer.Controls.CtrlChangePassword.resources
+G:\Projects\DVLD\InterFaceLayer\InterFaceLayer\obj\Debug\InterFaceLayer.Controls.CtrlEditPersonInfo.resources
+G:\Projects\DVLD\InterFaceLayer\InterFaceLayer\obj\Debug\InterFaceLayer.PeopleFrm.resources
+G:\Projects\DVLD\InterFaceLayer\InterFaceLayer\bin\Debug\aa\InterFaceLayer.resources.dll
+G:\Projects\DVLD\InterFaceLayer\InterFaceLayer\obj\Debug\InterFaceLayer.People.ShowPersonInfofrm.resources
+G:\Projects\DVLD\InterFaceLayer\InterFaceLayer\obj\Debug\InterFaceLayer.People.ShowPersonInfofrm.aa.resources
+G:\Projects\DVLD\InterFaceLayer\InterFaceLayer\obj\Debug\aa\InterFaceLayer.resources.dll
+G:\Projects\DVLD\InterFaceLayer\InterFaceLayer\obj\Debug\InterFaceLayer.AddUpdatefrm.resources
